@@ -1,5 +1,17 @@
 {
+  "name": "engine",
+  "version": "1.0.0",
+  "repository": "git@github.com:boost-me/engine.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "main": "dist/index.js",
+  "dependencies": {},
   "devDependencies": {
-    "tslint": "^5.11.0"
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "typescript": "^3.1.3"
   }
 }

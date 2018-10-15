@@ -1,3 +1,3 @@
 export function start() {
-  return "boost me";
+  return 'boost me';
 }

@@ -1,19 +1,33 @@
+import { Button, Popover } from 'antd';
 import * as React from 'react';
 import './index.css';
 
-import logo from './logo.svg';
-
 class HomeScene extends React.Component {
+  public state = {
+    visible: false,
+  }
+
+  public hide = () => {
+    this.setState({
+      visible: false,
+    });
+  }
+
+  public handleVisibleChange = (visible: boolean) => {
+    this.setState({ visible });
+  }
+
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Popover
+          content={<a onClick={this.hide}>hello world :)</a>}
+          trigger="click"
+          visible={this.state.visible}
+          onVisibleChange={this.handleVisibleChange}
+        >
+          <Button type="primary">BOOST ME/ENGINE</Button>
+        </Popover>
       </div>
     );
   }

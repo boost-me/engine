@@ -1,11 +1,14 @@
 import { connect as reactReduxConnect } from 'react-redux'
-import { combineReducers, createStore } from 'redux' 
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducers from './reducers'
 
 export const configureStore = (): any => {
   const reducer = combineReducers(reducers)
-  const store = createStore(reducer)
+  const store = createStore(reducer, composeWithDevTools(
+    applyMiddleware(),
+  ));
 
   return store
 }

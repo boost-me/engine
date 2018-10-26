@@ -1,6 +1,5 @@
 import { Button, Popover } from 'antd';
 import * as React from 'react';
-import Upload from '../../components/upload'
 import './index.css';
 
 class HomeScene extends React.Component {
@@ -29,7 +28,6 @@ class HomeScene extends React.Component {
         >
           <Button type="primary">BOOST ME/ENGINE</Button>
         </Popover>
-        <Upload />
       </div>
     );
   }

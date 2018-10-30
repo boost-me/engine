@@ -31,7 +31,11 @@ export class PlayerList extends React.PureComponent<{}> {
   private renderRow = (item: string) => {
     return (
       <List.Item>
-        <PlayerRow name={item} money={'$100'} />
+        <PlayerRow 
+          name={item} 
+          money={100}
+          health={12}
+        />
       </List.Item>
     )
   }

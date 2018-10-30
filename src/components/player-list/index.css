@@ -1,0 +1,6 @@
+@import '~antd/dist/antd.css';
+
+.list {
+  margin: 16px;
+  width: 190px;
+}

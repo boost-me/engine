@@ -57,6 +57,7 @@
     ],
     // this is up for discussion
     "no-submodule-imports": false,
+    // already in the codebase
     "no-default-export": false
   },
   "linterOptions": {

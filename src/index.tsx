@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
-import HomeScene from './scenes/home';
+import './index.css'
+import registerServiceWorker from './registerServiceWorker'
+import HomeScene from './scenes/home'
 import { configureStore } from './store'
 
 const store = configureStore()
@@ -12,5 +12,5 @@ ReactDOM.render(
     <HomeScene />
   </Provider>,
   document.getElementById('root') as HTMLElement
-);
-registerServiceWorker();
+)
+registerServiceWorker()

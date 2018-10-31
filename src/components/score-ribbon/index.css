@@ -1,0 +1,39 @@
+@import '~antd/dist/antd.css';
+
+.ct {
+  color: #0079b9;
+}
+
+.t {
+  color: #e4c273;
+}
+
+.team-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.team-name-ct {
+  text-align: right;
+}
+
+.team-name-t {
+  text-align: left;
+}
+
+.score {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.rounds {
+  text-align: center;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}

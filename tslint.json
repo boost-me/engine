@@ -56,6 +56,7 @@
       "dev"
     ],
     // this is up for discussion
+    "no-submodule-imports": false,
     "no-default-export": false
   },
   "linterOptions": {

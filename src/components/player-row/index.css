@@ -1,0 +1,25 @@
+@import '~antd/dist/antd.css';
+
+.cell {
+  width: 140px;
+}
+
+.row {
+  flex-flow: row wrap;
+}
+
+.utility {
+  margin-right: 4px;
+}
+
+.money {
+  font-size: 12px;
+  text-align: right;
+  height: 8px;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 500;
+  height: 10px;
+}

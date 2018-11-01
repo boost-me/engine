@@ -1,6 +1,5 @@
 import { Sprite, Stage } from '@inlet/react-pixi'
-import * as React from 'react';
-
+import * as React from 'react'
 
 export class Canvas extends React.PureComponent<{}> {
   public render() {
@@ -12,4 +11,4 @@ export class Canvas extends React.PureComponent<{}> {
   }
 }
 
-export default Canvas 
+export default Canvas

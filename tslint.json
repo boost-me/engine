@@ -1,10 +1,70 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
+  "rules": {
+    // enforce use of Array<T>, instead of T[].
+    "array-type": [
+      true,
+      "generic"
+    ],
+    // suggest converting () => { return x; } to () => x.
+    "arrow-return-shorthand": [
+      true,
+      "multiline"
+    ],
+    // ensure proper spacing between import statement keywords.
+    "import-spacing": true,
+    // disallow trailing whitespace at the end of a line.
+    "no-trailing-whitespace": [
+      true,
+      "ignore-template-strings"
+    ],
+    // only enable this to please Kronborg... :D
+    "object-literal-sort-keys": [
+      false,
+      "ignore-case"
+    ],
+    "prettier": [
+      true,
+      {
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": true,
+        "printWidth": 80,
+        "semi": false,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "es5",
+        "useTabs": false
+      }
+    ],
+    "space-before-function-paren": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore"
+    ],
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ],
+    // this is up for discussion
+    "no-submodule-imports": false,
+    // already in the codebase
+    "no-default-export": false
+  },
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
-      "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "node_modules"
     ]
   }
 }

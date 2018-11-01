@@ -1,22 +1,22 @@
-import { Col, Row } from 'antd';
-import * as React from 'react';
-import './index.css';
+import { Col, Row } from 'antd'
+import * as React from 'react'
+import './index.css'
 
 interface IMatchRounds {
-  current: number,
-  max: number,
+  current: number
+  max: number
 }
 
 interface ITeamScore {
-  name: string,
-  score: number,
+  name: string
+  score: number
 }
 
 interface IProps {
-  ct: ITeamScore,
-  t: ITeamScore,
-  rounds: IMatchRounds,
-  time: string,
+  ct: ITeamScore
+  t: ITeamScore
+  rounds: IMatchRounds
+  time: string
 }
 
 class ScoreRibbon extends React.PureComponent<IProps> {

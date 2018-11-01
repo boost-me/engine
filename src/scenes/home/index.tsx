@@ -1,6 +1,6 @@
-import { Button, Popover } from 'antd';
-import * as React from 'react';
-import './index.css';
+import { Button, Popover } from 'antd'
+import * as React from 'react'
+import './index.css'
 
 class HomeScene extends React.Component {
   public state = {
@@ -10,11 +10,11 @@ class HomeScene extends React.Component {
   public hide = () => {
     this.setState({
       visible: false,
-    });
+    })
   }
 
   public handleVisibleChange = (visible: boolean) => {
-    this.setState({ visible });
+    this.setState({ visible })
   }
 
   public render() {
@@ -24,13 +24,12 @@ class HomeScene extends React.Component {
           content={<a onClick={this.hide}>hello world :)</a>}
           trigger="click"
           visible={this.state.visible}
-          onVisibleChange={this.handleVisibleChange}
-        >
+          onVisibleChange={this.handleVisibleChange}>
           <Button type="primary">BOOST ME/ENGINE</Button>
         </Popover>
       </div>
-    );
+    )
   }
 }
 
-export default HomeScene;
+export default HomeScene

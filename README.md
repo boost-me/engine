@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/boost-me/engine.svg?branch=develop)](https://travis-ci.org/boost-me/engine)
+
 # Boost me – 2d playback for CS:GO demos
 
 ## Running

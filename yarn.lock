@@ -8527,9 +8527,9 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
-react-pixi-fiber@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/react-pixi-fiber/-/react-pixi-fiber-0.5.0.tgz#0ecf080eb67b110551d75ad9e88ee9a529689a74"
+react-pixi-fiber@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-pixi-fiber/-/react-pixi-fiber-0.5.1.tgz#d9ef011b6a47f8ef87c46ad98d9d08f1bb540c43"
   dependencies:
     fbjs "^0.8.0"
     performance-now "^2.1.0"

@@ -3,4 +3,6 @@ import Canvas from './index'
 
 import { storiesOf } from '@storybook/react'
 
-storiesOf('Canvas', module).add('default', () => <Canvas />)
+storiesOf('Canvas', module).add('default', () => (
+  <Canvas width={800} height={800} />
+))

@@ -1,24 +1,23 @@
 import * as React from 'react'
-import { Sprite } from 'react-pixi-fiber'
-import ct from '../../../assets/players/ct.png'
-import t from '../../../assets/players/t.png'
+import { Sprite, Text } from 'react-pixi-fiber'
+import PlayerCircle from '../circle'
 
 interface IProps {
   app: PIXI.Application
 }
 interface IState {
+  name: string
   x: number
   y: number
-  type: 'ct' | 't'
 }
 
 class PlayerSprite extends React.PureComponent<IProps, IState> {
   constructor(props: IProps) {
     super(props)
     this.state = {
-      x: 0,
-      y: 0,
-      type: 't',
+      name: 'unknown',
+      x: 350,
+      y: 350,
     }
   }
 
@@ -35,15 +34,19 @@ class PlayerSprite extends React.PureComponent<IProps, IState> {
   }
 
   public render() {
-    const { x, y, type } = this.state
+    const { x, y, name } = this.state
+    const style = new PIXI.TextStyle({
+      fill: '#ffffff',
+      fontSize: 12,
+      fontWeight: 'bolder',
+      strokeThickness: 0.5,
+    })
+    const anchor = new PIXI.ObservablePoint(() => null, undefined, 0.5, 0.5)
     return (
-      <Sprite
-        width={15}
-        height={15}
-        x={x}
-        y={y}
-        texture={PIXI.Texture.fromImage(type === 'ct' ? ct : t)}
-      />
+      <Sprite>
+        <Text anchor={anchor} text={name} style={style} x={x} y={y - 15} />
+        <PlayerCircle x={x} y={y} radius={15 / 2} fill={0x0079b9} alpha={1} />
+      </Sprite>
     )
   }
 }

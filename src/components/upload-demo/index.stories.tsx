@@ -3,7 +3,7 @@ import Upload from './index'
 
 import { storiesOf } from '@storybook/react'
 
-storiesOf('upload-demo', module).add('default', () => (
+storiesOf('components/upload-demo', module).add('default', () => (
   <Upload
     text={'Lorem ipsum dolor sit amet'}
     hint={

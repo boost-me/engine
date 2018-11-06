@@ -3,4 +3,4 @@ import PlayerList from './index'
 
 import { storiesOf } from '@storybook/react'
 
-storiesOf('player-list', module).add('default', () => <PlayerList />)
+storiesOf('components/list', module).add('list', () => <PlayerList />)

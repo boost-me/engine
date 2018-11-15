@@ -1,6 +1,11 @@
 import { Button, Popover } from 'antd'
+import 'antd/dist/antd.css'
 import * as React from 'react'
-import './index.css'
+import styled from 'styled-components'
+
+const Content = styled.div`
+  text-align: center;
+`
 
 class HomeScene extends React.Component {
   public state = {
@@ -19,7 +24,7 @@ class HomeScene extends React.Component {
 
   public render() {
     return (
-      <div className="App">
+      <Content>
         <Popover
           content={<a onClick={this.hide}>hello world :)</a>}
           trigger="click"
@@ -27,7 +32,7 @@ class HomeScene extends React.Component {
           onVisibleChange={this.handleVisibleChange}>
           <Button type="primary">BOOST ME/ENGINE</Button>
         </Popover>
-      </div>
+      </Content>
     )
   }
 }

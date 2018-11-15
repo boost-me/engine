@@ -1,24 +1,28 @@
 import { List } from 'antd'
+import 'antd/dist/antd.css'
 import * as React from 'react'
+import styled from 'styled-components'
 import PlayerRow from '../player-row'
-import './index.css'
 
 const data = ['Niko', 'Dupree', 'Device', 'Async', 'Pant']
 
+const Content = styled.div`
+  margin: 16px;
+  width: 190px;
+`
 export class PlayerList extends React.PureComponent<{}> {
   public render() {
     return (
-      <div>
+      <Content>
         <List
           size={'default'}
-          className={'list'}
           header={null}
           footer={null}
           bordered={true}
           dataSource={data}
           renderItem={this.renderRow}
         />
-      </div>
+      </Content>
     )
   }
 

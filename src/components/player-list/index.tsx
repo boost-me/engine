@@ -1,5 +1,4 @@
 import { List } from 'antd'
-import 'antd/dist/antd.css'
 import * as React from 'react'
 import styled from 'styled-components'
 import PlayerRow from '../player-row'

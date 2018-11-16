@@ -4,7 +4,6 @@ import {
   Progress,
   Row as AntRow,
 } from 'antd'
-import 'antd/dist/antd.css'
 import { AvatarProps } from 'antd/lib/avatar'
 import { ColProps } from 'antd/lib/col'
 import { RowProps } from 'antd/lib/row'

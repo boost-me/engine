@@ -2,7 +2,6 @@ import { Icon, message, Upload } from 'antd'
 import { UploadChangeParam } from 'antd/lib/upload/interface'
 import * as React from 'react'
 const Dragger = Upload.Dragger
-import './index.css'
 
 interface IProps {
   text: string

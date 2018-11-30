@@ -1,6 +1,42 @@
 import { Col, Row } from 'antd'
+import { ColProps } from 'antd/lib/col'
 import * as React from 'react'
-import './index.css'
+import styled from 'styled-components'
+
+interface ITeam {
+  team: 'ct' | 't'
+}
+
+interface IScoreProps extends ColProps, ITeam {}
+interface INameProps extends ColProps, ITeam {}
+
+const CT = () => '#0079b9'
+const T = () => '#e4c273'
+
+const Rounds = styled<ColProps>((props) => <Col {...props} />)`
+  text-align: center;
+`
+
+const Time = styled<ColProps>((props) => <Col {...props} />)`
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+`
+
+const Score = styled<IScoreProps>((props) => <Col {...props} />)`
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: ${(props) => (props.team === 'ct' ? CT : T)};
+`
+
+const Name = styled<INameProps>((props) => <Col {...props} />)`
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: ${(props) => (props.team === 'ct' ? CT : T)};
+  text-align: ${(props) => (props.team === 'ct' ? 'right' : 'left')};
+`
 
 interface IMatchRounds {
   current: number
@@ -23,38 +59,36 @@ class ScoreRibbon extends React.PureComponent<IProps> {
   public render() {
     const { ct, t, rounds, time } = this.props
     return (
-      <div className="score-ribbon">
+      <div>
         <Row type="flex" align="middle">
           <Col span={11}>
             <Row>
-              <Col span={22} className="ct team-name team-name-ct">
+              <Name span={22} team={'ct'}>
                 {ct.name}
-              </Col>
-              <Col span={2} className="ct score">
+              </Name>
+              <Score span={2} team={'ct'}>
                 {ct.score}
-              </Col>
+              </Score>
             </Row>
           </Col>
           <Col span={2}>
             <Row>
-              <Col span={24} className="time">
-                {time}
-              </Col>
+              <Time span={24}>{time}</Time>
             </Row>
             <Row>
-              <Col span={24} className="rounds">
+              <Rounds span={24}>
                 {`Round ${rounds.current}/${rounds.max}`}
-              </Col>
+              </Rounds>
             </Row>
           </Col>
           <Col span={11}>
             <Row>
-              <Col span={2} className="t score">
+              <Score span={2} team={'t'}>
                 {t.score}
-              </Col>
-              <Col span={22} className="t team-name team-name-t">
+              </Score>
+              <Name span={22} team={'t'}>
                 {t.name}
-              </Col>
+              </Name>
             </Row>
           </Col>
         </Row>

@@ -1,5 +1,6 @@
 import { Icon, Layout, Menu } from 'antd'
 import { SelectParam } from 'antd/lib/menu/'
+import { connect } from 'react-redux'
 
 import * as React from 'react'
 import PlaybackScene from '../playback'
@@ -19,6 +20,9 @@ class HomeScene extends React.Component<{}, IState> {
       collapsed: false,
       selectedKey: '1',
     }
+
+    // tslint:disable-next-line:no-console
+    console.log(this.props)
   }
 
   public toggle = () => {
@@ -92,4 +96,8 @@ class HomeScene extends React.Component<{}, IState> {
   }
 }
 
-export default HomeScene
+const mapStateToProps = (state: any) => ({
+  rounds: state.ptf.rounds,
+})
+
+export default connect(mapStateToProps)(HomeScene)

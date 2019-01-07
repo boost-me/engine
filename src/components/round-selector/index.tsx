@@ -12,13 +12,23 @@ const Wrapper = styled.div`
 
 interface IProps {
   numberOfRounds: number
-  activeRound?: number
+  currentRound?: number
+  onRoundClick?: (round: number) => void
 }
 
 class RoundSelector extends React.PureComponent<IProps> {
+  // todo: Can we type this event?.
+  public onRoundClick = (event: any) => {
+    const { onRoundClick } = this.props
+    const roundNumber = parseInt(event.target.dataset.roundNumber, 10)
+
+    if (onRoundClick) {
+      onRoundClick(roundNumber)
+    }
+  }
+
   public render() {
-    const numberOfRounds = this.props.numberOfRounds
-    const activeRound = this.props.activeRound
+    const { numberOfRounds, currentRound } = this.props
 
     return (
       <Content>
@@ -28,7 +38,10 @@ class RoundSelector extends React.PureComponent<IProps> {
             const roundNumber = i + 1
             return (
               <Button
-                type={roundNumber === activeRound ? 'primary' : 'default'}>
+                key={i}
+                data-round-number={roundNumber}
+                type={roundNumber === currentRound ? 'primary' : 'default'}
+                onClick={this.onRoundClick}>
                 {roundNumber}
               </Button>
             )

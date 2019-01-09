@@ -34,15 +34,15 @@ class RoundSelector extends React.PureComponent<IProps> {
       <Content>
         <Divider>{`Rounds`}</Divider>
         <Wrapper>
-          {_.times(numberOfRounds, (i: number) => {
-            const roundNumber = i + 1
+          {_.times(numberOfRounds, (roundNumber: number) => {
+            const title = roundNumber + 1
             return (
               <Button
-                key={i}
+                key={roundNumber}
                 data-round-number={roundNumber}
                 type={roundNumber === currentRound ? 'primary' : 'default'}
                 onClick={this.onRoundClick}>
-                {roundNumber}
+                {title}
               </Button>
             )
           })}

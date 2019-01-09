@@ -1,40 +1,103 @@
-import { Button, Popover } from 'antd'
-import 'antd/dist/antd.css'
+import { Icon, Layout, Menu } from 'antd'
+import { SelectParam } from 'antd/lib/menu/'
+import { connect } from 'react-redux'
+
 import * as React from 'react'
-import styled from 'styled-components'
+import PlaybackScene from '../playback'
+import './index.css'
 
-const Content = styled.div`
-  text-align: center;
-`
+const { Header, Sider, Content } = Layout
 
-class HomeScene extends React.Component {
-  public state = {
-    visible: false,
+interface IState {
+  collapsed: boolean
+  selectedKey: string
+}
+
+class HomeScene extends React.Component<{}, IState> {
+  constructor(props: object) {
+    super(props)
+    this.state = {
+      collapsed: false,
+      selectedKey: '1',
+    }
+
+    // tslint:disable-next-line:no-console
+    console.log(this.props)
   }
 
-  public hide = () => {
+  public toggle = () => {
     this.setState({
-      visible: false,
+      collapsed: !this.state.collapsed,
     })
   }
 
-  public handleVisibleChange = (visible: boolean) => {
-    this.setState({ visible })
+  public onMenuSelect = (params: SelectParam) => {
+    this.setState({
+      selectedKey: params.key,
+    })
+  }
+
+  public renderContent = () => {
+    const { selectedKey } = this.state
+    switch (selectedKey) {
+      case '1':
+        return <PlaybackScene />
+      default:
+        return <p>no content</p>
+    }
   }
 
   public render() {
     return (
-      <Content>
-        <Popover
-          content={<a onClick={this.hide}>hello world :)</a>}
-          trigger="click"
-          visible={this.state.visible}
-          onVisibleChange={this.handleVisibleChange}>
-          <Button type="primary">BOOST ME/ENGINE</Button>
-        </Popover>
-      </Content>
+      <Layout>
+        <Sider
+          theme="dark"
+          style={{
+            height: '100vh',
+          }}
+          trigger={null}
+          collapsible={true}
+          collapsed={this.state.collapsed}>
+          <div className="logo" />
+          <Menu
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={['1']}
+            onSelect={this.onMenuSelect}>
+            <Menu.Item key="1">
+              <Icon type="video-camera" />
+              <span>View</span>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <Icon type="upload" />
+              <span>Upload</span>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout>
+          <Header style={{ background: '#fff', padding: 0 }}>
+            <Icon
+              className="trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
+          </Header>
+          <Content
+            style={{
+              margin: '0px 0px',
+              padding: 24,
+              background: '#fff',
+            }}>
+            {this.renderContent()}
+          </Content>
+        </Layout>
+      </Layout>
     )
   }
 }
 
-export default HomeScene
+const mapStateToProps = (state: any) => ({
+  rounds: state.ptf.rounds,
+})
+
+export default connect(mapStateToProps)(HomeScene)

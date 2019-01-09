@@ -3,7 +3,7 @@ import ScoreRibbon from './index'
 
 import { storiesOf } from '@storybook/react'
 
-storiesOf('score-ribbon', module).add('default', () => (
+storiesOf('components/score-ribbon', module).add('default', () => (
   <ScoreRibbon
     rounds={{ current: 5, max: 30 }}
     ct={{ name: 'Team F*ckho', score: 5 }}

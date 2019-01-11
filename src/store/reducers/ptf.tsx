@@ -11,8 +11,24 @@ interface ITeams {
   t: ITeam
 }
 
+interface IPosition {
+  x: number
+  y: number
+}
+
+export interface IEntity {
+  type: string
+  id: number
+  position: IPosition
+}
+
+interface ITick {
+  entities: [IEntity]
+}
+
 export interface IRound {
   teams: ITeams
+  ticks: [ITick]
 }
 
 interface IState {

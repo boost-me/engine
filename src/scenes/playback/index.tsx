@@ -1,9 +1,11 @@
 import * as React from 'react'
+import { AppContext, Stage } from 'react-pixi-fiber'
 import { connect } from 'react-redux'
 
 import { loadRound } from '../../store/actions'
 import { IRound } from '../../store/reducers/ptf'
 
+import Canvas from '../../components/canvas'
 import RoundSelector from '../../components/round-selector'
 import ScoreRibbon from '../../components/score-ribbon'
 
@@ -21,6 +23,9 @@ class PlaybackScene extends React.PureComponent<IProps> {
   public render() {
     const { currentRound, round } = this.props
 
+    // tslint:disable-next-line:no-console
+    // console.log(this.props.round)
+
     return (
       <div>
         {round && (
@@ -31,6 +36,11 @@ class PlaybackScene extends React.PureComponent<IProps> {
             time="2:00"
           />
         )}
+        <Stage width={200} height={200} options={{ backgroundColor: 0x10bb99 }}>
+          <AppContext.Consumer>
+            {(app) => <Canvas app={app} round={round} />}
+          </AppContext.Consumer>
+        </Stage>
         <RoundSelector
           numberOfRounds={30}
           currentRound={currentRound}

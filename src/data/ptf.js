@@ -9,7 +9,88 @@ export default {
         "name": "Astralis",
         "score": 0
       }
-    }
+    },
+    "ticks": [{
+      "entities": [{
+        "position": { "x": 10 , "y": 10 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 11 , "y": 10 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 12 , "y": 10 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 13 , "y": 10 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 14 , "y": 11 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 15 , "y": 12 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 16 , "y": 12 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 17 , "y": 12 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 18 , "y": 12 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 19 , "y": 12 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 20 , "y": 13 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 20 , "y": 14 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 20 , "y": 15 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 20 , "y": 16 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 20 , "y": 17 },
+        "type": "player"
+      }]
+    }, {
+      "entities": [{
+        "position": { "x": 20 , "y": 18 },
+        "type": "player"
+      }]
+    }]
   }, {
     "teams": {
       "ct": {
